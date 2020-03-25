@@ -2,7 +2,7 @@ import React from "react";
 
 import "../global.css";
 
-import Form from "../components/form";
+import Form from "../components/contactForm";
 
 const IndexPage = () => {
   return (

@@ -37,18 +37,17 @@ const useFetch = (url, options = {}) => {
   const sendRequest = () => {
     dispatch({ type: "LOADING" });
 
+    // See: https://developer.mozilla.org/en-US/docs/Web/API/Request
     const request = new Request(url, options);
 
     fetch(request)
+      .then(resp => resp.json())
       .then(resp => {
-        if (resp.status >= 200 && resp.status < 300) {
-          return resp.json();
+        if (resp.status === "success") {
+          dispatch({ type: "RESPONSE", response: resp });
         } else {
-          throw new Error("Something went wrong with the response.");
+          dispatch({ type: "ERROR", error: resp });
         }
-      })
-      .then(resp => {
-        dispatch({ type: "RESPONSE", response: resp });
       })
       .catch(error => {
         dispatch({ type: "ERROR", error });
