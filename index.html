@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A JAMStack Site</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main>
+      <h1>JAMStack</h1>
+      <p>I like to write code</p>
+      <h2>Recently updated code projects</h2>
+      <div id="content">
+        Loading...
+      </div>
+
+      <!-- Deferred scripts will only run once the DOM is ready -->
+      <script defer type="module" src="./defer.js"></script>
+
+      <!-- Async scripts are independent of the DOM -->
+      <!-- <script async src="./async.js"></script> -->
+    </main>
+  </body>
+</html>
