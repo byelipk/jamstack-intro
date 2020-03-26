@@ -1,17 +1,14 @@
 import React from "react";
 
-import "../global.css";
-
 import Form from "../components/contactForm";
+import Layout from "../components/layout"
 
 const IndexPage = () => {
   return (
-    <>
-      <main>
-        <h1>Send a message:</h1>
-        <Form />
-      </main>
-    </>
+    <Layout>
+      <h1>Send a message:</h1>
+      <Form />
+    </Layout>
   );
 };
 
