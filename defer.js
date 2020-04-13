@@ -37,3 +37,16 @@ const listRepos = async username => {
 };
 
 listRepos("byelipk");
+
+const sayHello = async () => {
+  try {
+    const repos = await fetch("/api/hello");
+    const response = await repos.text();
+
+    alert(response)
+  } catch (error) {
+    console.error(error);
+  } 
+}
+
+sayHello()
